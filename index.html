@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<style>
+	/*
+	  .quiz {
+		&__step {
+		  position: relative;
+		  left: 60px;
+
+		  &_hidden {
+			display: none;
+			visibility: hidden;
+		  }
+		}
+	  }
+	*/
+	.quiz__step{position:relative;left:60px}.quiz__step_hidden{display:none;visibility:hidden}
+</style>
+<div class="calc-page-quiz__quiz quiz">
+
+	<div class="quiz__step">1
+	</div>
+
+	<div class="quiz__step quiz__step_hidden">2
+	</div>
+
+	<div class="quiz__step quiz__step_hidden">3
+	</div>
+
+	<div class="quiz__step quiz__step_hidden">4
+	</div>
+
+	<div class="quiz__nav">
+		<button class="quiz__prev" disabled>Назад</button>
+		<button class="quiz__next">Далее</button>
+		<button class="quiz__send quiz__step_hidden">Отправить</button>
+	</div>
+
+	<div class="quiz__step__preloader">
+	</div>
+</div>
+
+<script src="jquery-3.4.1.min.js"></script>
+<script src="quizConstructor.js"></script>
+<script>
+    $(function (e) {
+
+        new Quiz({
+            buttonNext : '.quiz__next',
+            buttonPrev : '.quiz__prev',
+            stepElementSelector: '.quiz__step',
+            stepElementSelectorHidden: 'quiz__step_hidden',
+            stepsCounter: 4,
+            //triggerBlockStep: 2
+        });
+    });
+</script>
+</body>
+</html>
